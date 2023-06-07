@@ -2,12 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Roboto+Slab:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <main  class="p-5 m-5">
+      <section>
+        <h1 class="text-center">Annejanette's Expense Tracker</h1><br/>
+        <form class="pl-5 ml-5">
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="description" class="control-label">Description</label>
+              <input type="text" placeholder="Description" class="form-control" name="description" id="description">
+            </div>
+            <div class="form-group col-6">
+              <label for="amount" class="control-label">Amount</label>
+              <div class="row">
+                <div class="col-8">
+                  <input type="number" placeholder="Amount" class="form-control" name="amount" id="amount">
+                </div>
+                <div class="col-4">
+                  <button type="submit" class="btn btn-dark">Add Expense</button>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </form>
+        <br><br>
+        <h1 class="text-center">Total Expense <b>PHP 2,000.00</b></h1><br>
+        <center>
+          <table class="table table-md" style="width:50%">
+            <thead>
+              <tr>
+                <th scope="col-4">Description</th>
+               <th scope="col-4">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Electricty</td>
+                <td>2,000.00</td>
+              </tr>
+            </tbody>
+          </table>  
+        </center>
+        
+      </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
   </body>
 </html>
