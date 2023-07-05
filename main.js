@@ -1,24 +1,59 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// alert("hello world")
+// Mock database
+let expenses = [
+  {
+    "id": 1,
+    "title": "Rent",
+    "amount": 1000
+  },
+  {
+    "id": 2,
+    "title": "Grocery",
+    "amount": 200
+  },
+  {
+    "id": 3,
+    "title": "Utilities",
+    "amount": 150
+  },
+  {
+    "id": 4,
+    "title": "Transportation",
+    "amount": 100
+  },
+  {
+    "id": 5,
+    "title": "Entertainment",
+    "amount": 50
+  }
+]
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+let amountArray = [];
+let index = 0;
 
-setupCounter(document.querySelector('#counter'))
+expenses.forEach((expense) =>{
+  let table = document.getElementById('table');
+
+  let row = table.insertRow(-1);
+
+  let title = row.insertCell(0);
+  let amount = row.insertCell(1);
+  
+  title.innerText += `${expense.title}`;
+  amount.innerText += `${expense.amount}`;
+  
+  amountArray[index] = `${expense.amount}`;
+  index++;  
+})
+
+let amountArrayNum = [];
+for (let i = 0; i < amountArray.length; i++) {
+  amountArrayNum.push(parseInt(amountArray[i]));
+}
+
+let sum = 0;
+for (const item of amountArrayNum) {
+  sum += item;
+}
+
+document.getElementById('totalExpense').innerHTML = "Total Expense Php "+ sum;
